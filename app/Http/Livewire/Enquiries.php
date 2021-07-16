@@ -17,7 +17,7 @@ class Enquiries extends Component
     public function mount()
     {
         $enquiries = ContactForm::where('created_at', '>' ,now()->subDays(7))->count();
-        $acknoldgements = ContactForm::where('acknowledged', '=', Null)->count();
+        $acknoldgements = ContactForm::where('acknowledged', '=', 'No')->count();
         $openEnquiries = ContactForm::where('status', '=', 'open')->count();
         $appointments = ContactForm::where('appointment_date', '>', now())->count();
         $allEnquiries = ContactForm::get();

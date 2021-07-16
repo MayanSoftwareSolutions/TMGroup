@@ -3,7 +3,7 @@
       <div id="enquiry_data" class="flex flex-col">
          <div class="flex flex-wrap -mx-1 p-2 overflow-hidden sm:-mx-1 md:-mx-1 lg:-mx-1 xl:-mx-1">
                 <div class="my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 sm:w-1/2 md:my-1 md:px-1 md:w-1/2 lg:my-1 lg:px-1 lg:w-1/4 xl:my-1 xl:px-1">
-                    <div class="shadow-sm rounded-2xl w-64 p-4 bg-white flex justify-between items-center">
+                    <div class="shadow-sm rounded-2xl w-full p-4 bg-white flex justify-between items-center">
                         <div class="w-3/6">
                             <p class="text-gray-700 text-sm">
                                 <span class="text-green-600 font-bold">
@@ -14,7 +14,7 @@
                                     No
                                     @endif
                                 </span>
-                                new enquiries this week  
+                                new enquiries recieved this week  
                             </p>
                         </div>
                         <div class="w-1/6 text-right">
@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 sm:w-1/2 md:my-1 md:px-1 md:w-1/2 lg:my-1 lg:px-1 lg:w-1/4 xl:my-1 xl:px-1">
-                    <div class="shadow-sm rounded-2xl w-64 p-4 bg-white flex justify-between items-center">
+                    <div class="shadow-sm rounded-2xl w-full p-4 bg-white flex justify-between items-center">
                         <div class="w-3/6">
                             <p class="text-gray-700 text-sm">
                                 <span class="text-blue-600 font-bold">
@@ -49,7 +49,7 @@
                 </div>
 
                 <div class="my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 sm:w-1/2 md:my-1 md:px-1 md:w-1/2 lg:my-1 lg:px-1 lg:w-1/4 xl:my-1 xl:px-1">           
-                    <div class="shadow-sm rounded-2xl w-64 p-4 bg-white flex justify-between items-center">
+                    <div class="shadow-sm rounded-2xl w-full p-4 bg-white flex justify-between items-center">
                         <div class="w-3/6">
                             <p class="text-gray-700 text-sm"> 
                                 <span class="text-red-500 font-bold">
@@ -72,7 +72,7 @@
                 </div>
 
                 <div class="my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 sm:w-1/2 md:my-1 md:px-1 md:w-1/2 lg:my-1 lg:px-1 lg:w-1/4 xl:my-1 xl:px-1">
-                    <div class="shadow-sm rounded-2xl w-64 p-4 bg-white flex justify-between items-center">
+                    <div class="shadow-sm rounded-2xl w-full p-4 bg-white flex justify-between items-center">
                         <div class="w-3/6">
                             <p class="text-gray-700 text-sm">
                                 <span class="text-purple-600 font-bold">
@@ -193,7 +193,7 @@
                                        <div class="text-sm font-semibold text-gray-900">
                                         <span class="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-indigo-100 @if($enquiry->status == "Open")bg-green-500 @else bg-yellow-500 @endif rounded">  
                                         {{ $enquiry->status }}
-                                        </span>
+                                        </sp
                                        </div>
                                     </td>
 

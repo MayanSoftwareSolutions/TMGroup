@@ -3290,6 +3290,10 @@ select {
 		width: 50%;
 	}
 
+	.md\:w-full {
+		width: 100%;
+	}
+
 	.md\:max-w-6xl {
 		max-width: 72rem;
 	}
@@ -3491,6 +3495,10 @@ select {
 
 	.lg\:w-2\/4 {
 		width: 50%;
+	}
+
+	.lg\:w-full {
+		width: 100%;
 	}
 
 	.lg\:max-w-screen-xl {

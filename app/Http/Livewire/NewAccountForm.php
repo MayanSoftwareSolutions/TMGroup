@@ -21,6 +21,7 @@ class NewAccountForm extends Component
     public $confirmPassword;
     public $selectedRole;
     public $role;
+
  
 
     public $pages = [
@@ -100,7 +101,7 @@ class NewAccountForm extends Component
                 'job_title' => $this->job_title,
                 'department' => $this->department,
                 'organisation' => $this->organisation,
-                'password' => bcrypt($this->password),
+                'password' => $this->password,
                 ]);
                 
         $create->roles()->sync($this->role);

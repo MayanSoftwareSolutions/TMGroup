@@ -17,7 +17,7 @@
         </div>
         <div x-show="open" @click.away="open=false" x-transition:enter-start="transition ease-in duration-3000" class="absolute z-10 -ml-4 mt-3 transform bg-transparent px-2 sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
 
-            <div class="shadow-none rounded-lg bg-white mx-auto m-2 p-4 mr-2 notification-box flex">
+            <div class="shadow-none rounded-lg bg-white mx-auto m-2 p-4 mr-5 notification-box flex">
                 <div>
                 <div class="text-sm text-gray-700 font-bold pb-2 float-left">
                     My Notifications 
@@ -26,7 +26,7 @@
             </div>
 
             @foreach($notifications as $notification)
-            <div class="shadow-lg rounded-lg bg-white mx-auto m-2 p-4 mr-2 notification-box flex">
+            <div class="shadow-lg rounded-lg bg-white mx-auto m-2 p-4 mr-5 notification-box flex">
                 @foreach($notification->data['notify'] as $messages)
                 <div class="pr-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -5,6 +5,7 @@ use App\Http\Livewire\NewAccountForm;
 use App\Http\Livewire\EditAccountForm;
 use App\Http\Livewire\NewRoleForm;
 use App\Http\Livewire\EditRoleForm;
+use App\Http\Livewire\AcknowledgementForm;
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,4 +30,7 @@ Route::group(['middleware' => ['auth', 'checkuserstatus']], function ()
     Route::get('/roles', [\App\Http\Controllers\RoleController::class, 'index'])->name('roles');
     Route::get('/roles/{role}', [\App\Http\Controllers\RoleController::class, 'show'])->name('role.show');
     Route::delete('/roles/{role}', [\App\Http\Controllers\RoleController::class, 'destroy'])->name('role.delete');
+    //Acknowledgements
+    Route::get('/acknowledgement/create', NewAccountForm::class)->name('acknowledgement.create');
+
 });

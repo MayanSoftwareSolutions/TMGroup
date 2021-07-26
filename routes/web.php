@@ -30,8 +30,10 @@ Route::group(['middleware' => ['auth', 'checkuserstatus']], function ()
     Route::get('/roles', [\App\Http\Controllers\RoleController::class, 'index'])->name('roles');
     Route::get('/roles/{role}', [\App\Http\Controllers\RoleController::class, 'show'])->name('role.show');
     Route::delete('/roles/{role}', [\App\Http\Controllers\RoleController::class, 'destroy'])->name('role.delete');
-    //Acknowledgements
+    //enquiries
     Route::get('/interactions/{contactForm}/create', InteractionsForm::class)->name('interaction.create');
     Route::get('/contacts/{contactForm}', [\App\Http\Controllers\ContactFormController::class, 'show'])->name('contact.show');
+    Route::delete('/contacts/{id}', [\App\Http\Controllers\ContactFormController::class, 'destroy'])->name('contact.delete');
+
 
 });

@@ -8,7 +8,7 @@ use App\Models\ContactInteractions;
 
 class ContactFormController extends Controller
 {
-        public function show(ContactForm $contactForm)
+    public function show(ContactForm $contactForm)
     {
         // abort_if(Gate::denies('can_interact'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
@@ -17,4 +17,20 @@ class ContactFormController extends Controller
 
         return view('contacts.show', compact('form'));
     }
+
+    public function destroy($id)
+    {
+
+        $enquiry=ContactForm::find($id);
+
+        $enquiry->delete();
+
+        $success = $enquiry->organisation. "'s enquiry has been deleted successfully !";
+
+        session()->flash('message', $success);
+
+        return redirect()->route('dashboard')->withSuccessMessage('Account deleted');
+    }
+
+
 }

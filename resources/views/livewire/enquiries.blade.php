@@ -127,6 +127,7 @@
                                  Online Enquiries
                               </h2>
                            </div>
+                           @if(count($allEnquiries) > 1)
                            <table class="min-w-full divide-y divide-gray-200">
                               <thead class="bg-gray-50">
                                  <tr>
@@ -153,6 +154,19 @@
                                     </th>
                                  </tr>
                               </thead>
+                              <tbody class="bg-white divide-y divide-gray-200">
+                                 <tr>
+                                    
+                                       <div class="flex items-center">
+                                          <div class="ml-1">
+                                             <div class="text-sm font-semibold font-medium text-gray-900">
+                                                You dont have any enquiries at the moment
+                                             </div>
+                                          </div>
+                                       </div>
+                                    
+                                 </tr>
+                              </tbody>
                               @foreach($allEnquiries as $enquiry)
                               <tbody class="bg-white divide-y divide-gray-200">
                                  <tr>
@@ -225,7 +239,7 @@
                                        <a href="{{ route('interaction.create', $enquiry->id) }}" class="inline-flex bg-white hover:bg-red-500 text-gray-800 hover:text-white text-xs font-bold py-1 px-2 border border-gray-400 rounded shadow">Interact</a>
                                        @endcan
                                        @can('user_delete')
-                                       <form class="inline-block form-prevent-multiple-submits" id="form" action="#" method="POST">
+                                       <form class="inline-block form-prevent-multiple-submits" id="form" action="{{ route('contact.delete', $enquiry->id) }}" method="POST">
                                           <input type="hidden" name="_method" value="DELETE">
                                           <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                           <button type="submit" class="bg-white hover:bg-red-600 text-gray-800 hover:text-white text-xs font-bold py-1 px-2 border border-gray-400 rounded shadow button-prevent-multiple-submits">Delete</button>
@@ -236,7 +250,19 @@
                               </tbody>
                               @endforeach
                            </table>
-
+                           @else
+                           <div class="text-start w-1/2 py-12 px-4 sm:px-6 lg:py-16 lg:px-8 z-20">
+                              <h2 class="text-sm font-extrabold text-black dark:text-white sm:text-sm">
+                                    <span class="block">
+                                       You dont have any enquiries at the moment 
+                                    </span>
+                                    <br>
+                                    <span class="block text-red-500">
+                                       Please check back later...
+                                    </span>
+                              </h2>
+                           </div>
+                           @endif
                         </div>
                      </div>
                   </div>

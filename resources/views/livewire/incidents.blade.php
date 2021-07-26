@@ -11,6 +11,7 @@
                                  Incidents
                               </h2>
                            </div>
+                           
                            <table class="min-w-full divide-y divide-gray-200">
                               <thead class="bg-gray-50">
                                  <tr>
@@ -113,8 +114,20 @@
                                     </td>
                                  </tr>
                               </tbody>
-                              
                            </table>
+                           {{-- @else
+                           <div class="text-start w-1/2 py-12 px-4 sm:px-6 lg:py-16 lg:px-8 z-20">
+                              <h2 class="text-sm font-extrabold text-black dark:text-white sm:text-sm">
+                                    <span class="block">
+                                       You dont have any incident at the moment 
+                                    </span>
+                                    <br>
+                                    <span class="block text-red-500">
+                                       Please check back later...
+                                    </span>
+                              </h2>
+                           </div>
+                           @endif --}}
 
                         </div>
                      </div>

@@ -127,7 +127,7 @@
                                  Online Enquiries
                               </h2>
                            </div>
-                           @if(count($allEnquiries) > 1)
+                           @if(count($allEnquiries) > 0)
                            <table class="min-w-full divide-y divide-gray-200">
                               <thead class="bg-gray-50">
                                  <tr>
@@ -154,19 +154,6 @@
                                     </th>
                                  </tr>
                               </thead>
-                              <tbody class="bg-white divide-y divide-gray-200">
-                                 <tr>
-                                    
-                                       <div class="flex items-center">
-                                          <div class="ml-1">
-                                             <div class="text-sm font-semibold font-medium text-gray-900">
-                                                You dont have any enquiries at the moment
-                                             </div>
-                                          </div>
-                                       </div>
-                                    
-                                 </tr>
-                              </tbody>
                               @foreach($allEnquiries as $enquiry)
                               <tbody class="bg-white divide-y divide-gray-200">
                                  <tr>
@@ -227,7 +214,7 @@
                                        <div class="text-sm font-semibold text-gray-900">
                                         <span class="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-indigo-100 @if($enquiry->status == "Open")bg-green-500 @else bg-yellow-500 @endif rounded">  
                                         {{ $enquiry->status }}
-                                        </sp
+                                        </span>
                                        </div>
                                     </td>
 

@@ -21,6 +21,7 @@ class InteractionsForm extends Component
     public $context;
     public $message;
     public $success;
+    public $logInteraction;
 
     public $pages = [
         1 => 
@@ -82,7 +83,7 @@ class InteractionsForm extends Component
 
         $this->validate($rules);
 
-        $logInteraction = ContactInteractions::create([
+            $logInteraction = ContactInteractions::create([
                 'contact_form_id' => $this->contact_form_id,
                 'interaction_type' => $this->interaction_type,
                 'recipient' => $this->recipient,
@@ -101,16 +102,20 @@ class InteractionsForm extends Component
                 ]);
             }
 
+            $this->logInteraction = $logInteraction;
+
+            $to =  $this->logInteraction->recipient;
+
+            Notification::route('mail', $to)->notify(new InteractionNotification($logInteraction));
+
             $users = User::whereHas('roles', function ($query) {
             $query->where('id', 1);
             })->get();
 
-            $this->contactForm = $contactForm;
-
 
             foreach($users as $user)
             {
-                Notification::send($this->contactForm->email, new InteractionNotification($logInteraction));
+                Notification::send($user, new InteractionNotification($this->logInteraction));
             }
             
 

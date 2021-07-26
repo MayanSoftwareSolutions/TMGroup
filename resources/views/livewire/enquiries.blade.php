@@ -31,17 +31,17 @@
                             <p class="text-gray-700 text-sm">
                                 <span class="text-blue-600 font-bold">
                                     You have
-                                    @if($acknoldgements > 0)
-                                    {{ $acknoldgements }}
+                                    @if($acknowledgement > 0)
+                                    {{ $acknowledgement }}
                                     @else
                                     No
                                     @endif
                                 </span>
-                                enquiries needing acknoldgement
+                                enquiries needing acknowledgement
                             </p>
                         </div>
                         <div class="w-1/6 text-right">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-700 @if($acknoldgements > 0) animate-bounce @endif" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-700 @if($acknowledgement > 0) animate-bounce @endif" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
                             </svg>
                         </div>
@@ -64,7 +64,7 @@
                             </p>
                         </div>
                         <div class="w-1/6 text-right">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-red-500 @if($acknoldgements > 0) animate-bounce @endif" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-red-500 @if($acknowledgement > 0) animate-bounce @endif" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 19v-8.93a2 2 0 01.89-1.664l7-4.666a2 2 0 012.22 0l7 4.666A2 2 0 0121 10.07V19M3 19a2 2 0 002 2h14a2 2 0 002-2M3 19l6.75-4.5M21 19l-6.75-4.5M3 10l6.75 4.5M21 10l-6.75 4.5m0 0l-1.14.76a2 2 0 01-2.22 0l-1.14-.76" />
                             </svg>
                         </div>

@@ -15,14 +15,16 @@ class InteractionNotification extends Notification
     use Queueable;
 
     public $logInteraction;
+    public $contactForm;
     public $contactLine3;
     public $contactLine4;
 
     public function __construct($logInteraction)
     {
+    
         $this->logInteraction = $logInteraction;
-        $this->contactLine1 = "Kind Regards";
-        $this->contactLine4 = "ThompsonMooreGroup Ltd";
+        $this->contactForm = ContactForm::where('id', $this->logInteraction->contact_form_id)->first();
+
     }
 
     public function via($notifiable)
@@ -34,19 +36,19 @@ class InteractionNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->subject('Contact Form Ref 000'.$this->logInteraction->id)
-                    ->line($this->logInteractions)
-                    ->line($this->logInteractions)
-                    ->line($this->contactLine3)
-                    ->line($this->contactLine4);        
+                    ->subject($this->logInteraction->subject)
+                    ->line($this->contactForm->organisation)
+                    ->line('ThompsonMooreGroup Ref '.$this->logInteraction->id)
+                    ->line('Thank you for contacting ThompsonMooreGroup')
+                    ->line($this->logInteraction->context);
     }
 
 
     public function toArray($notifiable)
     {
         return [
-            'notify' => ['An interaction has been logged on '. $this->logInteraction->created_at->format('j F, Y')],
-            'url' => []
+            'notify' => ['Interaction Notification. A new "'.$this->logInteraction->interaction_type.'" has been sent to '.$this->contactForm->organisation],
+            'url' => ['/contacts/'.$this->contactForm->id]
         ];
     }
 }

@@ -6,6 +6,7 @@ use App\Http\Livewire\EditAccountForm;
 use App\Http\Livewire\NewRoleForm;
 use App\Http\Livewire\EditRoleForm;
 use App\Http\Livewire\InteractionsForm;
+use App\Http\Livewire\InteractionsTable;
 
 Route::get('/', function () {
     return view('welcome');

@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <a href="/" class="relative flex items-center inline-block h-5 h-full font-black leading-none">
+            <a href="/" class="relative flex items-center justify-center inline-block h-5 h-full font-black leading-none">
                 <svg class="w-auto h-10 text-indigo-600 fill-current" viewBox="0 0 194 116" xmlns="http://www.w3.org/2000/svg">
                     <g fill-rule="evenodd">
                         <path

@@ -60,12 +60,8 @@
             @endforeach
 
             @if($countNotifications > 3)
-            <div class="shadow-xl rounded-lg bg-white mx-auto m-1 p-4 notification-box flex">
-                <div>
-                <div class="text-xs">
+            <div class="shadow-lg rounded-lg bg-white mx-auto text-xs m-2 p-4 mr-5 notification-box flex">
                     {{ $notifications->links() }}
-                </div>
-                </div>
             </div>
             @endif
 

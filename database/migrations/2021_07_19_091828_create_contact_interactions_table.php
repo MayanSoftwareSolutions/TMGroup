@@ -15,6 +15,11 @@ class CreateContactInteractionsTable extends Migration
     {
         Schema::create('contact_interactions', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('contact_form_id');
+            $table->string('interaction_type');
+            $table->string('recipient');
+            $table->string('subject');
+            $table->string('context');
             $table->timestamps();
         });
     }

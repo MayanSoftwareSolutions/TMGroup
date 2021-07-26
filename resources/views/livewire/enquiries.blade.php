@@ -89,6 +89,26 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 sm:w-1/2 md:my-1 md:px-1 md:w-1/2 lg:my-1 lg:px-1 lg:w-1/4 xl:my-1 xl:px-1">
+                    <div class="shadow-sm rounded-2xl w-full p-4 bg-white flex justify-between items-center">
+                        <div class="w-3/6">
+                            <p class="text-gray-700 text-sm">
+                                <span class="text-purple-600 font-bold">
+                                    You have
+                                    {{ $appointments }}
+                                </span>
+                                    unactioned high tickets raised
+                            </p>
+                        </div>
+                        <div class="w-1/6 text-right">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
+                           </svg>
+                        </div>
+                    </div>
+                </div>
+
             </div>
       </div>
       <br>
@@ -199,10 +219,10 @@
 
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                        @can('user_access')
-                                       <a href="#" class="inline-flex bg-white hover:bg-blue-600 text-gray-800 hover:text-white text-xs font-bold py-1 px-2 border border-gray-400 rounded shadow">Show</a>
+                                       <a href="{{ route('contact.show', $enquiry->id) }}" class="inline-flex bg-white hover:bg-blue-600 text-gray-800 hover:text-white text-xs font-bold py-1 px-2 border border-gray-400 rounded shadow">Show</a>
                                        @endcan
                                        @can('user_edit')
-                                       <a href="#" class="inline-flex bg-white hover:bg-red-500 text-gray-800 hover:text-white text-xs font-bold py-1 px-2 border border-gray-400 rounded shadow">Modify</a>
+                                       <a href="{{ route('interaction.create', $enquiry->id) }}" class="inline-flex bg-white hover:bg-red-500 text-gray-800 hover:text-white text-xs font-bold py-1 px-2 border border-gray-400 rounded shadow">Interact</a>
                                        @endcan
                                        @can('user_delete')
                                        <form class="inline-block form-prevent-multiple-submits" id="form" action="#" method="POST">

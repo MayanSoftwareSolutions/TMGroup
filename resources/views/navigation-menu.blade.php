@@ -49,7 +49,7 @@
                 <!-- Settings Dropdown -->
                 <div class="hidden sm:flex sm:items-center sm:ml-6">
 
-                    <div class="mr-5 outline-none focus:outline-none">
+                    <div class="mr-6 outline-none focus:outline-none">
                         @livewire('notifications')
                     </div>
 

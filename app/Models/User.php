@@ -12,6 +12,7 @@ use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\Activitylog\LogOptions;
+use App\Models\IncidentLog;
 
 class User extends Authenticatable
     {
@@ -107,5 +108,10 @@ class User extends Authenticatable
         public function roles()
         {
             return $this->belongsToMany(Role::class);
+        }
+
+        public function incidents()
+        {
+            return $this->hasMany(IncidentLog::class);
         }
     }

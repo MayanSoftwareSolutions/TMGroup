@@ -40,7 +40,7 @@ class UserCreationNotification extends Notification
         return
         [
             'notify' => ['Welcome '.$this->user->name],
-            'url' => ['/user/profile']
+            'url' => ['/users/profile']
         ];
     }
 }

@@ -1,3 +1,4 @@
+@can('interaction_access')
 <div>
    <div class="container mx-auto px-4 sm:px-8 w-full">
       <div class="py-2">
@@ -69,3 +70,4 @@
       </div>
    </div>
 </div>
+@endcan

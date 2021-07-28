@@ -7,6 +7,7 @@ use App\Http\Livewire\NewRoleForm;
 use App\Http\Livewire\EditRoleForm;
 use App\Http\Livewire\InteractionsForm;
 use App\Http\Livewire\InteractionsTable;
+use App\Http\Livewire\IncidentLogForm;
 
 Route::get('/', function () {
     return view('welcome');
@@ -35,6 +36,8 @@ Route::group(['middleware' => ['auth', 'checkuserstatus']], function ()
     Route::get('/interactions/{contactForm}/create', InteractionsForm::class)->name('interaction.create');
     Route::get('/contacts/{contactForm}', [\App\Http\Controllers\ContactFormController::class, 'show'])->name('contact.show');
     Route::delete('/contacts/{id}', [\App\Http\Controllers\ContactFormController::class, 'destroy'])->name('contact.delete');
+    //incidentlog
+    Route::get('/incident/create', IncidentLogForm::class)->name('incident.create');
 
 
 });

@@ -39,7 +39,7 @@ class UserPermissionChangeNotification extends Notification
     {
         return [
             'notify' => ['The account registered to '.$this->user->name.'s, system permissions have been updated'],
-            'url' => ['/user/'.$this->user->id]
+            'url' => ['/users/'.$this->user->id]
         ];
     }
 }

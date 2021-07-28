@@ -39,7 +39,7 @@ class UserUpdateNotification extends Notification
         return
         [
             'notify' => ['Information linked to your account has been changed'],
-            'url' => ['/user/'.$this->user->id]
+            'url' => ['/users/'.$this->user->id]
         ];
     }
 }

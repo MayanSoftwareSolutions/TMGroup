@@ -1,3 +1,4 @@
+@can('enquiry_access')
 <div>
     <div class="max-w-7xl mx-auto rounded-lg py-5 sm:px-3 lg:px-4">  
       <div id="enquiry_data" class="flex flex-col">
@@ -219,13 +220,13 @@
                                     </td>
 
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                       @can('user_access')
+                                       @can('enquiry_access')
                                        <a href="{{ route('contact.show', $enquiry->id) }}" class="inline-flex bg-white hover:bg-blue-600 text-gray-800 hover:text-white text-xs font-bold py-1 px-2 border border-gray-400 rounded shadow">Show</a>
                                        @endcan
-                                       @can('user_edit')
+                                       @can('enquiry_edit')
                                        <a href="{{ route('interaction.create', $enquiry->id) }}" class="inline-flex bg-white hover:bg-red-500 text-gray-800 hover:text-white text-xs font-bold py-1 px-2 border border-gray-400 rounded shadow">Interact</a>
                                        @endcan
-                                       @can('user_delete')
+                                       @can('enquiry_delete')
                                        <form class="inline-block form-prevent-multiple-submits" id="form" action="{{ route('contact.delete', $enquiry->id) }}" method="POST">
                                           <input type="hidden" name="_method" value="DELETE">
                                           <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -238,7 +239,7 @@
                               @endforeach
                            </table>
                            @else
-                           <div class="text-start w-1/2 py-12 px-4 sm:px-6 lg:py-16 lg:px-8 z-20">
+                           <div class="items-center justify-center w-full py-6 px-2 sm:px-3 lg:py-8 lg:px-4 z-10">
                               <h2 class="text-sm font-extrabold text-black dark:text-white sm:text-sm">
                                     <span class="block">
                                        You dont have any enquiries at the moment 
@@ -260,3 +261,4 @@
       <br>
    </div>
 </div>
+@endcan
